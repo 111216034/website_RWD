@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hugo's Blog</title>
+    <!-- 引入 Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
             background-image: url('assets/images/background.jpg');
             background-size: cover;
             background-position: center;
@@ -15,6 +15,22 @@
             background-attachment: fixed;
             min-height: 100vh;
             overflow: auto;
+        }
+
+        header {
+            background-image: url('assets/images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
         }
 
         .main-content-container {
@@ -36,47 +52,6 @@
             line-height: 1.8;
         }
 
-        header {
-            background-image: url('assets/images/banner.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        nav {
-            background-color: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 10px;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            margin: 0 15px;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            background-color: #0078ff;
-            border-radius: 5px;
-        }
-
         .section-title {
             background-color: #f1f1f1;
             padding: 10px 20px;
@@ -86,17 +61,6 @@
             text-align: center;
         }
 
-        .about-content {
-            font-size: 1.1rem;
-            color: #333;
-            margin: 20px 0;
-            line-height: 1.8;
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-        }
-
         footer {
             text-align: center;
             background-color: #333;
@@ -104,22 +68,6 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-
-                /* 按鈕樣式 */
-                .download-btn {
-                    background-color: #0078ff;
-                    color: white;
-                    padding: 15px 30px;
-                    border-radius: 5px;
-                    text-decoration: none;
-                    font-size: 1.2rem;
-                    display: inline-block;
-                    text-align: center;
-                }
-        
-                .download-btn:hover {
-                    background-color: #005bb5;
-                }
 
         /* 社交媒體浮動位置 */
         .social-links {
@@ -148,18 +96,28 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#section1">關於我</a>
-        <a href="#section2">工作經歷</a>
-        <a href="#section3">工作技能</a>
-        <a href="#section4">音樂作品</a>
-        <a href="#section5">視訊作品</a>
-        <a href="#section6">圖片作品</a>
-        <a href="#section7">更多資訊</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hugo's Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#section1">關於我</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section2">工作經歷</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section3">工作技能</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section4">音樂作品</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section5">視訊作品</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section6">圖片作品</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section7">更多資訊</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <header>
-        <img src="assets\images\IMG_0038.png" alt="橫幅" width="450">
+        <h1>陳世修 的個人部落格</h1>
     </header>
 
     <div class="main-content-container">
@@ -169,46 +127,41 @@
             </div>
 
             <div class="about-content">
-                <p>大家好，我是陳世修，一名熱愛科技與創新創作的工程師兼藝術家。畢業於國立台北教育大學資訊科學系，並在求學期間積極參與了多個技術專案，對程式設計和軟體開發充滿熱情。</p>
+                <p>大家好，我是陳世修，一名熱愛科技與創新創作的工程師/藝術家。我畢業於國立台北教育大學資訊科學系，並在學期間積極參與了多個技術專案，對程式設計和軟體開發充滿熱情。</p>
+
+                <p>在過去的幾年中，我在多家知名科技公司積累了豐富的經驗，從事過軟體工程師、系統開發工程師等職位，熟悉 Java、Python、C++ 等程式語言的應用，並能夠獨立完成複雜的技術挑戰。我尤其擅長於跨領域的技術整合，將最新的科技應用於實際的商業需求中，提升產品和服務的效能。</p>
                 
-                <p>至於工作經歷，我已經在多家知名科技公司積累了豐富的經驗，從事過軟體工程師、系統開發工程師等職位，因此熟悉 Java、Python、C++ 等程式語言的應用，並且能夠獨立完成複雜的專案。其中，我特別擅長於跨領域的技術整合，將最新的科技應用於實際的商業需求中，提升產品和服務的效能</p>
+                <p>除了工作上的專業技能，我對音樂和視覺藝術也有濃厚的興趣，並在這些領域中不斷探索與創作。我相信，科技與藝術的結合能夠帶來無限的可能性，並希望能在未來的工作中，將這兩者的魅力融合，創造出更多有意義的作品。</p>
                 
-                <p>除了工作上的專業技能，我對音樂和視覺藝術也有濃厚的興趣，在這些領域中不斷探索與創作。我認為，科技與藝術的結合能夠帶來創新的成果，如果能在未來的工作中，將這兩者的魅力融合，我想應該能夠創造獨特的吸引力。</p>
-                
-                <p>最後，對未來的規劃，持續學習並挑戰自我是我的目標，在科技創新與藝術創作的道路上，走得更遠，並與更多志同道合的人共同合作，實現夢想。</p>
+                <p>未來，我希望能夠持續學習並挑戰自我，在科技創新與藝術創作的道路上，走得更遠，並與更多志同道合的人共同合作，實現夢想。</p>
             </div>
 
             <!-- 工作經歷區域 -->
             <div class="section-title" id="section2">
                 <h2>工作經歷</h2>
             </div>
-            <table>
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>日期</th>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <th>工作內容</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>2020-2024</td>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td>台灣微軟公司軟體工程師</td>
                     </tr>
                     <tr>
                         <td>2018-2020</td>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td>華碩電腦系統開發工程師</td>
                     </tr>
                     <tr>
                         <td>2016-2018</td>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td>宏達電(HTC)手機開發工程師</td>
                     </tr>
                     <tr>
                         <td>2014-2016</td>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td>台灣積體電路製造公司（TSMC）硬體設計工程師</td>
                     </tr>
                 </tbody>
@@ -218,12 +171,8 @@
             <div class="section-title" id="section3">
                 <h2>技能介紹</h2>
             </div>
-            <h3>擅長使用Ptyhon，同時也會使用Java與C++作為輔助</h3>
-            <table>
-                <tr>
-                    <td>Python</td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
+            <h3>擅長使用Python，同時也會使用Java與C++作為輔助</h3>
+            <table class="table table-bordered">
                 <tr>
                     <td>Java</td>
                     <td>⭐⭐⭐</td>
@@ -231,6 +180,10 @@
                 <tr>
                     <td>C++</td>
                     <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>⭐⭐⭐⭐⭐</td>
                 </tr>
             </table>
             
@@ -250,63 +203,35 @@
                 <div class="section-title">
                     <h2>視訊作品</h2>
                 </div>
-                <h3>這是我利用AI製作的第一個影片</h3>
-                <video controls width="300">
-                    <source src="assets\video\AI影片.mp4" type="video/mp4">
+                <h3>這是我自製的程式介紹視訊</h3>
+                <video controls>
+                    <source src="assets\video\program_demo.mp4" type="video/mp4">
                 </video>
-                &nbsp;&nbsp;
             </article>
 
-            <!-- 圖片作品集介紹與描述 -->
+            <!-- 圖片作品介紹 -->
             <article id="section6">
                 <div class="section-title">
                     <h2>圖片作品</h2>
                 </div>
-                <figure style="display:inline-block;">
-                    <img src="assets\images\資二甲_111216034_陳世修 (1).jpg" alt="山間風景" width="450">
-                    <figcaption>壯麗的銀河</figcaption>
-                </figure>
-                <figure style="display:inline-block;">
-                    <img src="assets\images\秋天.jpg" alt="小鎮景色" width="450">
-                    <figcaption>秋天的山脈</figcaption>
-                </figure>
+                <img src="assets/images/artwork1.jpg" alt="作品1" class="img-fluid">
+                <img src="assets/images/artwork2.jpg" alt="作品2" class="img-fluid">
             </article>
 
-            <!-- 程式作品集介紹與描述 -->
-            <article id="section8">
-                <div class="section-title">
-                    <h2>程式作品</h2>
-                </div>
-                <h3>這是我利用Python所製作的作品</h3>
-                <p>遊戲內容為撲克牌遊戲中的十點半，特色是能夠雙人遊玩</p>
-                <figure style="display:inline-block;">
-                    <img src="assets\images\10 half.jpg" alt="小鎮景色" width="450">
-                    <figcaption>遊戲畫面之一</figcaption>
-                </figure>
-                <a href="assets\十點半 ver-1.18.zip" download="撲克牌遊戲.zip" class="download-btn">
-                    點擊下載遊戲壓縮檔
-                </a>
-            </article>
-
-            <!-- 嵌入文件 -->
-            <article id="section7">
-                <div class="section-title">
-                    <h2>更多資訊</h2>
-                </div>
-                <h3>這是我的大學所在位置</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2784024338266!2d121.54206247541927!3d25.02462437782254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a908a8232611%3A0xeebfb2d71a5025c7!2z5ZyL56uL6Ie65YyX5pWZ6IKy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1731827435609!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </article>
+            <!-- 更多資訊 -->
+            <div id="section7" class="section-title">
+                <h2>更多資訊</h2>
+                <p>若你想了解更多我的作品與資訊，歡迎隨時聯繫我！</p>
+            </div>
         </div>
     </div>
 
+    <!-- 頁腳 -->
     <footer>
-        <div class="social-links">
-            <h3>聯絡我</h3>
-            <a href="https://www.facebook.com/hugo.chen.54738" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/hugo.chen.54738/" target="_blank">Instagram</a>
-        </div>
-        <p>聯絡我：nt2263749@gmail.com</p>
-        <time datetime="2024-11-29">最後更新日期：2024年11月29日</time>
+        <p>&copy; 2024 Hugo's Blog | All Rights Reserved</p>
     </footer>
+
+    <!-- 引入 Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
